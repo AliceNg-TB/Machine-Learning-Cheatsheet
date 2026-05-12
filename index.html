@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>body{margin:0;display:flex;justify-content:center;align-items:center;min-height:100vh;background:#fff}svg{max-width:100%;height:auto}</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="1200" height="1600">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Sans+TC:wght@400;500;700&amp;display=swap');
+      
+      .bg { fill: #0d1117; }
+      .card-bg { fill: #161b22; }
+      .card-stroke { stroke: #30363d; stroke-width: 1.5; }
+      .header-bg { fill: #1f2937; }
+      
+      .title-text { font-family: 'Inter', 'Noto Sans TC', sans-serif; font-weight: 700; font-size: 36px; fill: #f0f6fc; }
+      .subtitle-text { font-family: 'Inter', 'Noto Sans TC', sans-serif; font-weight: 400; font-size: 16px; fill: #8b949e; }
+      .section-title { font-family: 'Inter', 'Noto Sans TC', sans-serif; font-weight: 700; font-size: 24px; fill: #f0f6fc; }
+      .item-title { font-family: 'Inter', 'Noto Sans TC', sans-serif; font-weight: 600; font-size: 18px; fill: #e6edf3; }
+      .item-title-en { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 14px; fill: #7d8590; }
+      .item-desc { font-family: 'Inter', 'Noto Sans TC', sans-serif; font-weight: 400; font-size: 14px; fill: #c9d1d9; line-height: 1.5; }
+      .item-desc-en { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 12px; fill: #8b949e; }
+      
+      .accent-blue { fill: #58a6ff; }
+      .accent-orange { fill: #f78166; }
+      .accent-blue-stroke { stroke: #58a6ff; }
+      .accent-orange-stroke { stroke: #f78166; }
+      
+      .fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
+      .fade-in-1 { animation-delay: 0.1s; }
+      .fade-in-2 { animation-delay: 0.2s; }
+      .fade-in-3 { animation-delay: 0.3s; }
+      .fade-in-4 { animation-delay: 0.4s; }
+      .fade-in-5 { animation-delay: 0.5s; }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    </style>
+    
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <rect class="bg" width="1200" height="1600"/>
+  
+  <!-- Header -->
+  <g class="fade-in fade-in-1">
+    <rect x="50" y="40" width="1100" height="120" rx="12" class="header-bg card-stroke" filter="url(#shadow)"/>
+    
+    <!-- TB Logo -->
+    <g transform="translate(90, 70)">
+      <rect width="60" height="60" rx="8" fill="#58a6ff"/>
+      <text x="30" y="42" font-family="Inter, sans-serif" font-weight="700" font-size="32" fill="#0d1117" text-anchor="middle">TB</text>
+    </g>
+    
+    <text x="170" y="95" class="title-text">機器學習備忘錄 Machine Learning Cheatsheet</text>
+    <text x="170" y="125" class="subtitle-text">監督式、非監督式、強化學習與核心技巧 | Supervised, Unsupervised, RL &amp; Core Tips</text>
+  </g>
+  
+  <!-- Section 1: Supervised Learning -->
+  <g class="fade-in fade-in-2">
+    <rect x="50" y="190" width="535" height="620" rx="12" class="card-bg card-stroke" filter="url(#shadow)"/>
+    
+    <!-- Section Header -->
+    <g transform="translate(75, 220)">
+      <!-- ML Icon for Supervised -->
+      <g class="accent-blue">
+        <rect x="0" y="0" width="32" height="32" rx="6" fill="#58a6ff" opacity="0.15"/>
+        <path d="M8 12 L16 8 L24 12 L24 20 L16 24 L8 20 Z" fill="none" stroke="#58a6ff" stroke-width="2"/>
+        <circle cx="16" cy="16" r="2" fill="#58a6ff"/>
+      </g>
+      <text x="45" y="23" class="section-title">監督式學習 Supervised Learning</text>
+    </g>
+    
+    <!-- Item 1: Regression -->
+    <g transform="translate(75, 285)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">迴歸 Regression</text>
+      <text x="15" y="45" class="item-title-en">Linear, Ridge, Lasso, ElasticNet</text>
+      <text x="15" y="70" class="item-desc">預測連續數值。常用於房價、銷售額預測</text>
+      <text x="15" y="90" class="item-desc-en">Predict continuous values. Used for price, sales forecasting</text>
+    </g>
+    
+    <!-- Item 2: Classification -->
+    <g transform="translate(75, 410)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">分類 Classification</text>
+      <text x="15" y="45" class="item-title-en">Logistic, SVM, Random Forest, XGBoost</text>
+      <text x="15" y="70" class="item-desc">預測類別標籤。適用於垃圾郵件、疾病診斷</text>
+      <text x="15" y="90" class="item-desc-en">Predict categorical labels. For spam detection, diagnosis</text>
+    </g>
+    
+    <!-- Item 3: Trees -->
+    <g transform="translate(75, 535)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">決策樹與集成 Decision Trees &amp; Ensembles</text>
+      <text x="15" y="45" class="item-title-en">GBDT, LightGBM, CatBoost</text>
+      <text x="15" y="70" class="item-desc">高準確、易解釋。處理表格資料的標準解法</text>
+      <text x="15" y="90" class="item-desc-en">High accuracy, interpretable. Standard for tabular data</text>
+    </g>
+    
+    <!-- Item 4: Neural Nets -->
+    <g transform="translate(75, 660)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">神經網路 Neural Networks</text>
+      <text x="15" y="45" class="item-title-en">MLP, CNN, RNN, Transformer</text>
+      <text x="15" y="70" class="item-desc">處理圖像、文本、序列。需大量資料</text>
+      <text x="15" y="90" class="item-desc-en">Handle images, text, sequences. Requires large data</text>
+    </g>
+  </g>
+  
+  <!-- Section 2: Unsupervised Learning -->
+  <g class="fade-in fade-in-3">
+    <rect x="615" y="190" width="535" height="620" rx="12" class="card-bg card-stroke" filter="url(#shadow)"/>
+    
+    <!-- Section Header -->
+    <g transform="translate(640, 220)">
+      <!-- ML Icon for Unsupervised -->
+      <g class="accent-orange">
+        <rect x="0" y="0" width="32" height="32" rx="6" fill="#f78166" opacity="0.15"/>
+        <circle cx="10" cy="12" r="3" fill="#f78166"/>
+        <circle cx="22" cy="12" r="3" fill="#f78166"/>
+        <circle cx="16" cy="22" r="3" fill="#f78166"/>
+        <line x1="10" y1="12" x2="16" y2="22" stroke="#f78166" stroke-width="1.5"/>
+        <line x1="22" y1="12" x2="16" y2="22" stroke="#f78166" stroke-width="1.5"/>
+      </g>
+      <text x="45" y="23" class="section-title">非監督式學習 Unsupervised Learning</text>
+    </g>
+    
+    <!-- Item 1: Clustering -->
+    <g transform="translate(640, 285)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">分群 Clustering</text>
+      <text x="15" y="45" class="item-title-en">K-Means, DBSCAN, Hierarchical</text>
+      <text x="15" y="70" class="item-desc">發現資料中的群組。用於客戶分群、異常檢測</text>
+      <text x="15" y="90" class="item-desc-en">Find groups in data. For customer segments, anomaly detection</text>
+    </g>
+    
+    <!-- Item 2: Dimensionality Reduction -->
+    <g transform="translate(640, 410)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">降維 Dimensionality Reduction</text>
+      <text x="15" y="45" class="item-title-en">PCA, t-SNE, UMAP, Autoencoders</text>
+      <text x="15" y="70" class="item-desc">減少特徵數量。加速訓練、視覺化高維資料</text>
+      <text x="15" y="90" class="item-desc-en">Reduce features. Speed up training, visualize high-dim data</text>
+    </g>
+    
+    <!-- Item 3: Association -->
+    <g transform="translate(640, 535)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">關聯規則 Association Rules</text>
+      <text x="15" y="45" class="item-title-en">Apriori, FP-Growth</text>
+      <text x="15" y="70" class="item-desc">發現項目間的關係。常用於購物籃分析</text>
+      <text x="15" y="90" class="item-desc-en">Find relationships between items. For market basket analysis</text>
+    </g>
+    
+    <!-- Item 4: Anomaly Detection -->
+    <g transform="translate(640, 660)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">異常檢測 Anomaly Detection</text>
+      <text x="15" y="45" class="item-title-en">Isolation Forest, One-Class SVM</text>
+      <text x="15" y="70" class="item-desc">識別罕見事件。用於詐欺檢測、系統監控</text>
+      <text x="15" y="90" class="item-desc-en">Identify rare events. For fraud detection, system monitoring</text>
+    </g>
+  </g>
+  
+  <!-- Section 3: Reinforcement Learning -->
+  <g class="fade-in fade-in-4">
+    <rect x="50" y="840" width="535" height="500" rx="12" class="card-bg card-stroke" filter="url(#shadow)"/>
+    
+    <!-- Section Header -->
+    <g transform="translate(75, 870)">
+      <!-- ML Icon for RL -->
+      <g class="accent-blue">
+        <rect x="0" y="0" width="32" height="32" rx="6" fill="#58a6ff" opacity="0.15"/>
+        <path d="M16 6 L22 12 L16 18 L10 12 Z" fill="none" stroke="#58a6ff" stroke-width="2"/>
+        <circle cx="16" cy="12" r="2" fill="#58a6ff"/>
+        <path d="M16 18 L16 26" stroke="#58a6ff" stroke-width="2" marker-end="url(#arrow-blue)"/>
+      </g>
+      <text x="45" y="23" class="section-title">強化學習 Reinforcement Learning</text>
+    </g>
+    
+    <defs>
+      <marker id="arrow-blue" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+        <polygon points="0 0, 6 3, 0 6" fill="#58a6ff"/>
+      </marker>
+    </defs>
+    
+    <!-- Item 1: Value-Based -->
+    <g transform="translate(75, 935)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">價值學習 Value-Based</text>
+      <text x="15" y="45" class="item-title-en">Q-Learning, DQN, Double DQN</text>
+      <text x="15" y="70" class="item-desc">學習狀態-動作價值。用於遊戲AI、離散決策</text>
+      <text x="15" y="90" class="item-desc-en">Learn state-action values. For game AI, discrete decisions</text>
+    </g>
+    
+    <!-- Item 2: Policy-Based -->
+    <g transform="translate(75, 1060)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">策略學習 Policy-Based</text>
+      <text x="15" y="45" class="item-title-en">REINFORCE, PPO, A3C</text>
+      <text x="15" y="70" class="item-desc">直接學習策略。適用連續動作空間</text>
+      <text x="15" y="90" class="item-desc-en">Learn policy directly. Suitable for continuous action space</text>
+    </g>
+    
+    <!-- Item 3: Actor-Critic -->
+    <g transform="translate(75, 1185)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">演員-評論家 Actor-Critic</text>
+      <text x="15" y="45" class="item-title-en">SAC, TD3, DDPG</text>
+      <text x="15" y="70" class="item-desc">結合價值與策略。機器人控制、自動駕駛</text>
+      <text x="15" y="90" class="item-desc-en">Combine value &amp; policy. For robotics, autonomous driving</text>
+    </g>
+  </g>
+  
+  <!-- Section 4: Tips -->
+  <g class="fade-in fade-in-5">
+    <rect x="615" y="840" width="535" height="500" rx="12" class="card-bg card-stroke" filter="url(#shadow)"/>
+    
+    <!-- Section Header -->
+    <g transform="translate(640, 870)">
+      <!-- ML Icon for Tips -->
+      <g class="accent-orange">
+        <rect x="0" y="0" width="32" height="32" rx="6" fill="#f78166" opacity="0.15"/>
+        <path d="M16 8 L18 14 L24 14 L19 18 L21 24 L16 20 L11 24 L13 18 L8 14 L14 14 Z" stroke="#f78166" stroke-width="2" fill="none"/>
+      </g>
+      <text x="45" y="23" class="section-title">核心技巧 Core Tips</text>
+    </g>
+    
+    <!-- Item 1: Data -->
+    <g transform="translate(640, 935)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">資料處理 Data Processing</text>
+      <text x="15" y="45" class="item-title-en">Normalization, Feature Engineering</text>
+      <text x="15" y="70" class="item-desc">資料品質 &gt; 模型。填補缺失值、特徵縮放</text>
+      <text x="15" y="90" class="item-desc-en">Data quality &gt; Model. Handle missing values, scaling</text>
+    </g>
+    
+    <!-- Item 2: Validation -->
+    <g transform="translate(640, 1060)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">模型驗證 Model Validation</text>
+      <text x="15" y="45" class="item-title-en">Cross-Validation, Train/Val/Test Split</text>
+      <text x="15" y="70" class="item-desc">避免過擬合。使用K-fold、時間序列切分</text>
+      <text x="15" y="90" class="item-desc-en">Avoid overfitting. Use K-fold, time-series splits</text>
+    </g>
+    
+    <!-- Item 3: Tuning -->
+    <g transform="translate(640, 1185)">
+      <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
+      <text x="15" y="25" class="item-title">超參數調優 Hyperparameter Tuning</text>
+      <text x="15" y="45" class="item-title-en">Grid Search, Bayesian Optimization</text>
+      <text x="15" y="70" class="item-desc">使用Optuna、Ray Tune自動搜索最佳參數</text>
+      <text x="15" y="90" class="item-desc-en">Use Optuna, Ray Tune for automated search</text>
+    </g>
+  </g>
+  
+  <!-- Footer -->
+  <g class="fade-in fade-in-5">
+    <rect x="50" y="1370" width="1100" height="80" rx="12" class="header-bg card-stroke"/>
+    <text x="600" y="1415" font-family="Inter, 'Noto Sans TC', sans-serif" font-size="14" fill="#8b949e" text-anchor="middle">
+      機器學習備忘錄 v4 | Machine Learning Cheatsheet | 選擇正確的工具解決正確的問題
+    </text>
+  </g>
+</svg>
+</body>
+</html>
