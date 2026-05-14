@@ -3,9 +3,59 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<style>body{margin:0;display:flex;justify-content:center;align-items:center;min-height:100vh;background:#fff}svg{max-width:100%;height:auto}</style>
+<style>
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fff;
+  }
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* ========== TB Art Logo 固定右上角 (與先前設計一致) ========== */
+  .tb-logo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    z-index: 9999;
+    filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3));
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  .tb-logo:hover {
+    transform: scale(1.05);
+  }
+  .tb-logo text {
+    font-family: 'Inter', 'Noto Sans TC', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    fill: url(#tbGrad);
+    letter-spacing: -1px;
+  }
+</style>
 </head>
 <body>
+
+<!-- ================= TB Art Logo (固定右上角) ================= -->
+<svg class="tb-logo" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="tbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D9FF" />
+      <stop offset="100%" stop-color="#7B61FF" />
+    </linearGradient>
+  </defs>
+  <circle cx="24" cy="24" r="23" fill="rgba(10,14,39,0.92)" stroke="url(#tbGrad)" stroke-width="2"/>
+  <text x="24" y="32" text-anchor="middle">TB</text>
+</svg>
+
+<!-- 機器學習備忘錄 SVG（內部 Logo 已替換為 ML 圖示） -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" width="1200" height="1600">
   <defs>
     <style>
@@ -53,10 +103,30 @@
   <g class="fade-in fade-in-1">
     <rect x="50" y="40" width="1100" height="120" rx="12" class="header-bg card-stroke" filter="url(#shadow)"/>
     
-    <!-- TB Logo -->
+    <!-- Machine Learning Icon (取代原本的 TB Logo) -->
     <g transform="translate(90, 70)">
-      <rect width="60" height="60" rx="8" fill="#58a6ff"/>
-      <text x="30" y="42" font-family="Inter, sans-serif" font-weight="700" font-size="32" fill="#0d1117" text-anchor="middle">TB</text>
+      <!-- 背景圓角方塊 -->
+      <rect width="60" height="60" rx="8" fill="#58a6ff" opacity="0.12"/>
+      <!-- 神經網路圖示：節點與連線 -->
+      <g stroke="#58a6ff" stroke-width="2" fill="none">
+        <!-- 連線 -->
+        <line x1="18" y1="18" x2="30" y2="30"/>
+        <line x1="42" y1="18" x2="30" y2="30"/>
+        <line x1="18" y1="42" x2="30" y2="30"/>
+        <line x1="42" y1="42" x2="30" y2="30"/>
+        <line x1="18" y1="18" x2="42" y2="18"/>
+        <line x1="18" y1="42" x2="42" y2="42"/>
+        <line x1="18" y1="18" x2="18" y2="42"/>
+        <line x1="42" y1="18" x2="42" y2="42"/>
+      </g>
+      <!-- 節點圓點 -->
+      <g fill="#58a6ff">
+        <circle cx="18" cy="18" r="4"/>
+        <circle cx="42" cy="18" r="4"/>
+        <circle cx="18" cy="42" r="4"/>
+        <circle cx="42" cy="42" r="4"/>
+        <circle cx="30" cy="30" r="5" fill="#00d4ff"/>
+      </g>
     </g>
     
     <text x="170" y="95" class="title-text">機器學習備忘錄 Machine Learning Cheatsheet</text>
@@ -69,7 +139,6 @@
     
     <!-- Section Header -->
     <g transform="translate(75, 220)">
-      <!-- ML Icon for Supervised -->
       <g class="accent-blue">
         <rect x="0" y="0" width="32" height="32" rx="6" fill="#58a6ff" opacity="0.15"/>
         <path d="M8 12 L16 8 L24 12 L24 20 L16 24 L8 20 Z" fill="none" stroke="#58a6ff" stroke-width="2"/>
@@ -78,7 +147,6 @@
       <text x="45" y="23" class="section-title">監督式學習 Supervised Learning</text>
     </g>
     
-    <!-- Item 1: Regression -->
     <g transform="translate(75, 285)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">迴歸 Regression</text>
@@ -87,7 +155,6 @@
       <text x="15" y="90" class="item-desc-en">Predict continuous values. Used for price, sales forecasting</text>
     </g>
     
-    <!-- Item 2: Classification -->
     <g transform="translate(75, 410)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">分類 Classification</text>
@@ -96,7 +163,6 @@
       <text x="15" y="90" class="item-desc-en">Predict categorical labels. For spam detection, diagnosis</text>
     </g>
     
-    <!-- Item 3: Trees -->
     <g transform="translate(75, 535)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">決策樹與集成 Decision Trees &amp; Ensembles</text>
@@ -105,7 +171,6 @@
       <text x="15" y="90" class="item-desc-en">High accuracy, interpretable. Standard for tabular data</text>
     </g>
     
-    <!-- Item 4: Neural Nets -->
     <g transform="translate(75, 660)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">神經網路 Neural Networks</text>
@@ -119,9 +184,7 @@
   <g class="fade-in fade-in-3">
     <rect x="615" y="190" width="535" height="620" rx="12" class="card-bg card-stroke" filter="url(#shadow)"/>
     
-    <!-- Section Header -->
     <g transform="translate(640, 220)">
-      <!-- ML Icon for Unsupervised -->
       <g class="accent-orange">
         <rect x="0" y="0" width="32" height="32" rx="6" fill="#f78166" opacity="0.15"/>
         <circle cx="10" cy="12" r="3" fill="#f78166"/>
@@ -133,7 +196,6 @@
       <text x="45" y="23" class="section-title">非監督式學習 Unsupervised Learning</text>
     </g>
     
-    <!-- Item 1: Clustering -->
     <g transform="translate(640, 285)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">分群 Clustering</text>
@@ -142,7 +204,6 @@
       <text x="15" y="90" class="item-desc-en">Find groups in data. For customer segments, anomaly detection</text>
     </g>
     
-    <!-- Item 2: Dimensionality Reduction -->
     <g transform="translate(640, 410)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">降維 Dimensionality Reduction</text>
@@ -151,7 +212,6 @@
       <text x="15" y="90" class="item-desc-en">Reduce features. Speed up training, visualize high-dim data</text>
     </g>
     
-    <!-- Item 3: Association -->
     <g transform="translate(640, 535)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">關聯規則 Association Rules</text>
@@ -160,7 +220,6 @@
       <text x="15" y="90" class="item-desc-en">Find relationships between items. For market basket analysis</text>
     </g>
     
-    <!-- Item 4: Anomaly Detection -->
     <g transform="translate(640, 660)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">異常檢測 Anomaly Detection</text>
@@ -174,9 +233,7 @@
   <g class="fade-in fade-in-4">
     <rect x="50" y="840" width="535" height="500" rx="12" class="card-bg card-stroke" filter="url(#shadow)"/>
     
-    <!-- Section Header -->
     <g transform="translate(75, 870)">
-      <!-- ML Icon for RL -->
       <g class="accent-blue">
         <rect x="0" y="0" width="32" height="32" rx="6" fill="#58a6ff" opacity="0.15"/>
         <path d="M16 6 L22 12 L16 18 L10 12 Z" fill="none" stroke="#58a6ff" stroke-width="2"/>
@@ -192,7 +249,6 @@
       </marker>
     </defs>
     
-    <!-- Item 1: Value-Based -->
     <g transform="translate(75, 935)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">價值學習 Value-Based</text>
@@ -201,7 +257,6 @@
       <text x="15" y="90" class="item-desc-en">Learn state-action values. For game AI, discrete decisions</text>
     </g>
     
-    <!-- Item 2: Policy-Based -->
     <g transform="translate(75, 1060)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">策略學習 Policy-Based</text>
@@ -210,7 +265,6 @@
       <text x="15" y="90" class="item-desc-en">Learn policy directly. Suitable for continuous action space</text>
     </g>
     
-    <!-- Item 3: Actor-Critic -->
     <g transform="translate(75, 1185)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">演員-評論家 Actor-Critic</text>
@@ -224,9 +278,7 @@
   <g class="fade-in fade-in-5">
     <rect x="615" y="840" width="535" height="500" rx="12" class="card-bg card-stroke" filter="url(#shadow)"/>
     
-    <!-- Section Header -->
     <g transform="translate(640, 870)">
-      <!-- ML Icon for Tips -->
       <g class="accent-orange">
         <rect x="0" y="0" width="32" height="32" rx="6" fill="#f78166" opacity="0.15"/>
         <path d="M16 8 L18 14 L24 14 L19 18 L21 24 L16 20 L11 24 L13 18 L8 14 L14 14 Z" stroke="#f78166" stroke-width="2" fill="none"/>
@@ -234,7 +286,6 @@
       <text x="45" y="23" class="section-title">核心技巧 Core Tips</text>
     </g>
     
-    <!-- Item 1: Data -->
     <g transform="translate(640, 935)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">資料處理 Data Processing</text>
@@ -243,7 +294,6 @@
       <text x="15" y="90" class="item-desc-en">Data quality &gt; Model. Handle missing values, scaling</text>
     </g>
     
-    <!-- Item 2: Validation -->
     <g transform="translate(640, 1060)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">模型驗證 Model Validation</text>
@@ -252,7 +302,6 @@
       <text x="15" y="90" class="item-desc-en">Avoid overfitting. Use K-fold, time-series splits</text>
     </g>
     
-    <!-- Item 3: Tuning -->
     <g transform="translate(640, 1185)">
       <rect x="0" y="0" width="485" height="110" rx="8" fill="#0d1117"/>
       <text x="15" y="25" class="item-title">超參數調優 Hyperparameter Tuning</text>
